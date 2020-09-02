@@ -35,6 +35,7 @@ search_input.send_keys('site:linkedin.com/in/ AND "Java developer" AND "Vancouve
 search_input.send_keys(Keys.RETURN)
 
 # grab all linkedin profiles from first page at Google
+# Change number of pages - next time start from 3 all the way to desired pages
 pages = [1,2]
 for i in pages:
     profiles = driver.find_elements_by_xpath('//*[@class="r"]/a[1]')
@@ -76,6 +77,7 @@ for i in pages:
 
     search_input.send_keys(Keys.RETURN)
 
+    # CHANGE the 3 to "i" as the 3 indicates the 2nd page on google - 4 indicates the 3rd and so on...
     driver.find_element_by_xpath('//*[@id="xjs"]/div/table/tbody/tr/td[3]/a').click()      
 
 driver.quit()
